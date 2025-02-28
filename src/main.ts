@@ -11,7 +11,7 @@ async function bootstrap() {
     if (dataSource.isInitialized) {
       console.log('✅ Database connection is established');
     }
-    app.listen(3000, () => {
+    app.listen(process.env.PORT || 3000, () => {
       console.log(`🚀 Server ready at http://localhost:${process.env.PORT}`);
     });
   } catch (error) {}
