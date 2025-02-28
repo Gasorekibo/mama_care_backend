@@ -1,0 +1,1 @@
+export const LOGEDIN_USER = 'user'
