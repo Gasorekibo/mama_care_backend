@@ -8,7 +8,10 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
   createTypeOrmOptions(): TypeOrmModuleOptions {
     return {
       type: 'postgres',
-       url: process.env.DATABASE_URL,
+      url: process.env.DATABASE_URL,
+      ssl: {
+        rejectUnauthorized: false,
+      },
       entities: ['dist/**/**/*.entity.{ts,js}'],
       synchronize: true,
     };
