@@ -7,7 +7,7 @@ async function bootstrap() {
     
     const app = await NestFactory.create(AppModule);
     app.enableCors({
-      origin: 'https://mama-care.netlify.app/',
+      origin: 'https://mama-care.netlify.app',
       credentials: true,
     });
     const dataSource = app.get(DataSource);
