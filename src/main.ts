@@ -6,13 +6,16 @@ async function bootstrap() {
   try {
     
     const app = await NestFactory.create(AppModule);
-    app.enableCors({ origin: 'http://localhost:5173', credentials: true });
+    app.enableCors({
+      origin: 'https://mama-care-backend.onrender.com',
+      credentials: true,
+    });
     const dataSource = app.get(DataSource);
     if (dataSource.isInitialized) {
       console.log('✅ Database connection is established');
     }
     app.listen(process.env.PORT || 10000, () => {
-      console.log(`🚀 Server ready at http://localhost:${process.env.PORT}`);
+      console.log(`🚀 Server ready at https://mama-care-backend.onrender.com`);
     });
   } catch (error) {}
 }
