@@ -7,7 +7,7 @@ async function bootstrap() {
     
     const app = await NestFactory.create(AppModule);
     app.enableCors({
-      origin: 'https://mama-care.pages.dev',
+      origin: 'https://mama-care-frontend.pages.dev',
       credentials: true,
     });
     const dataSource = app.get(DataSource);
