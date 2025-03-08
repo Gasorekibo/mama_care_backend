@@ -7,7 +7,7 @@ async function bootstrap() {
     
     const app = await NestFactory.create(AppModule);
     app.enableCors({
-      origin: 'https://mama-care-backend.onrender.com',
+      origin: 'https://mama-care.netlify.app/',
       credentials: true,
     });
     const dataSource = app.get(DataSource);
@@ -15,7 +15,7 @@ async function bootstrap() {
       console.log('✅ Database connection is established');
     }
     app.listen(process.env.PORT || 10000, () => {
-      console.log(`🚀 Server ready at https://mama-care-backend.onrender.com`);
+      console.log(`🚀 Server ready at https://mama-care.netlify.app/`);
     });
   } catch (error) {}
 }
