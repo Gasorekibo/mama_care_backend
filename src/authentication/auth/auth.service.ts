@@ -84,8 +84,8 @@ export class AuthService {
   async register(createUserDto: UserAuthDto): Promise<User> {
     try {
       const userObject = {
-        role: UserRole.ADMIN,
         ...createUserDto,
+        role: UserRole.ADMIN,
       }
       const user = await this.userRepository.create(userObject);
       user.password = await bcrypt.hash(user.password, 10);
