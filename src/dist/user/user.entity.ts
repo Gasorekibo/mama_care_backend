@@ -39,7 +39,7 @@ export class User {
   @Column({
     type: 'enum',
     enum: UserRole,
-    default: UserRole.PREGNANT_WOMAN,
+    default: UserRole.ADMIN,
   })
   role: UserRole;
 
