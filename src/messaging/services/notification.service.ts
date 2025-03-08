@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { ConflictException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { NotificationDTO } from '../dto/notification.dto';
@@ -48,6 +48,11 @@ export class NotificationService {
   }
 
   async markAsRead(notificationId: number) {
-    await this.notificationRepository.update(notificationId, { isRead: true });
+    try {
+      await this.notificationRepository.update(notificationId, { isRead: true });
+      
+    } catch (error) {
+      throw new ConflictException(error?.message)
+    }
   }
 }

@@ -16,6 +16,7 @@ import { PHealthRecordModule } from './p-health-record/p-health-record.module';
 import { PregnancyProfileModule } from './pregnancy-profile/pregnancy-profile.module';
 import { UserModule } from './user/user.module';
 import { HealthProfessionalModule } from './health-professional/health-professional.module';
+import { EmailModule } from './email/email.module';
 
 @Module({
   imports: [
@@ -40,6 +41,7 @@ import { HealthProfessionalModule } from './health-professional/health-professio
     PHealthRecordModule,
     MessagingModule,
     HealthProfessionalModule,
+    EmailModule,
   ],
   controllers: [],
   providers: [],
